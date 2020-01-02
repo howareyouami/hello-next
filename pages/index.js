@@ -1,9 +1,18 @@
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
+import react,{ useEffect, useState } from 'react';
 
-const Index = props => (
+const Index = props => {
+  const [x,fx]=useState(0)
+
+  useEffect(()=>{
+    console.log("Effect")
+  })
+  return(
   <>
-    <h1>Batman TV Shows</h1>
+<h1>Batman TV Shows +{x}</h1>
+
+    <button onClick={()=>fx(x+1)}></button>
     <ul>
       {props.shows.map(show => (
         <li key={show.id}>
@@ -14,7 +23,7 @@ const Index = props => (
       ))}
     </ul>
     </>
-);
+);}
 
 Index.getInitialProps = async function() {
   const res = await fetch('https://api.tvmaze.com/search/shows?q=batman');
