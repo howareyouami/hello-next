@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start"
   },
@@ -12,12 +12,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tinacms/api-git": "^0.5.0",
+    "@tinacms/git-client": "^0.4.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
     "next": "^9.1.6",
     "raw-loader": "^4.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-markdown": "^4.3.0"
+    "react-markdown": "^4.3.0",
+    "styled-components": "^4.4.1",
+    "tinacms": "^0.11.0"
   }
 }
